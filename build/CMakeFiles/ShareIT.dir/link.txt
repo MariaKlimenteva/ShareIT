@@ -1,0 +1,1 @@
+/usr/bin/clang++  -g   CMakeFiles/ShareIT.dir/src/main.cc.o  -o ShareIT  -lpthread 
