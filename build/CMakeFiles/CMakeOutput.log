@@ -383,3 +383,31 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/masha/code_projects/ShareIT/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_97231/fast && /usr/bin/make -f CMakeFiles/cmTC_97231.dir/build.make CMakeFiles/cmTC_97231.dir/build
+make[1]: Entering directory '/home/masha/code_projects/ShareIT/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_97231.dir/CheckIncludeFile.c.o
+/usr/bin/clang    -o CMakeFiles/cmTC_97231.dir/CheckIncludeFile.c.o   -c /home/masha/code_projects/ShareIT/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_97231
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_97231.dir/link.txt --verbose=1
+/usr/bin/clang      CMakeFiles/cmTC_97231.dir/CheckIncludeFile.c.o  -o cmTC_97231 
+make[1]: Leaving directory '/home/masha/code_projects/ShareIT/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/masha/code_projects/ShareIT/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_fdc2c/fast && /usr/bin/make -f CMakeFiles/cmTC_fdc2c.dir/build.make CMakeFiles/cmTC_fdc2c.dir/build
+make[1]: Entering directory '/home/masha/code_projects/ShareIT/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fdc2c.dir/CheckFunctionExists.c.o
+/usr/bin/clang   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_fdc2c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fdc2c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fdc2c.dir/link.txt --verbose=1
+/usr/bin/clang  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_fdc2c.dir/CheckFunctionExists.c.o  -o cmTC_fdc2c  -lpthread 
+make[1]: Leaving directory '/home/masha/code_projects/ShareIT/build/CMakeFiles/CMakeTmp'
+
+
+
