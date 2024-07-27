@@ -1,4 +1,7 @@
 // receiveData() - вернет std::vector<char> - трансфер
+
+// Пусть transfer возвращает dataPacket
+
 // unpackData() класса DataHandler - передает std::vector<char> - возвращает объект DataPacket
 // writeFile() класса DataHandler, передавая DataPacket и имя файла для сохранения
 // DataHandler записывает данные из DataPacket в файл
@@ -6,16 +9,21 @@
 #include "DataPacket.hh"
 #include "DataHandler.hh"
 
-class Reciever: public Connection {
-    public:
-    std::vector<char> transfer() {
+class Reciever {
+    private:
+    boost::asio::ip::tcp::acceptor acceptor_;
 
-    }
-    void saveData() {
+    public:
+    // dataPacket& transfer() {
+    //     return ;
+    // };
+
+    void saveData(const dataPacket& packet) {
+        const std::vector<char>& buffer = packet.data;
+
         dataHandler data;
-        data.unpackData();
-        data.writeFile();
-        return 
+        data.unpackData(buffer);
+        data.writeFile(packet, packet.filename); 
     }
 
 

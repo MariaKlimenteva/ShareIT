@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/masha/code_projects/ShareIT/build",
-  "command": "/usr/bin/clang++   -I/home/masha/code_projects/ShareIT/include  -g   -std=gnu++11 -o CMakeFiles/ShareIT.dir/src/main.cc.o -c /home/masha/code_projects/ShareIT/src/main.cc",
-  "file": "/home/masha/code_projects/ShareIT/src/main.cc"
-}
-]

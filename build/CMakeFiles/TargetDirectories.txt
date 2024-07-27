@@ -1,3 +1,0 @@
-/home/masha/code_projects/ShareIT/build/CMakeFiles/rebuild_cache.dir
-/home/masha/code_projects/ShareIT/build/CMakeFiles/edit_cache.dir
-/home/masha/code_projects/ShareIT/build/CMakeFiles/ShareIT.dir

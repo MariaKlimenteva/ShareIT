@@ -1,11 +1,12 @@
 #pragma once
 
 #include <vector>
+#include "DataPacket.hh"
 
 class Connection {
     public:
     Connection() = default;
     
-    virtual std::vector<char> transfer() = 0;
+    virtual dataPacket& transfer() = 0;
 };
 

@@ -4,6 +4,8 @@
 #include <array>
 #include <algorithm>
 #include <fstream>
+#include <boost/asio.hpp>
+#include <boost/array.hpp>
 
 #include "DataPacket.hh"
 
