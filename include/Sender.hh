@@ -4,6 +4,7 @@
 // 
 #include "Connection.hh"
 #include "DataPacket.hh"
+#include "DataHandler.hh"
 
 #include <boost/asio.hpp>
 
@@ -22,8 +23,25 @@ class Sender{
         std::cout << "I'm OK" ;
     };
 
+    // void sendData(dataPacket& packet) {
+    //     auto filename = packet.filename;
+    //     dataHandler data;
+    //     auto packet = data.readFile(filename);
+    //     boost::asio::const_buffer asio_buf = data.packData(packet);
 
-    // dataPacket& transfer() { 
-    //     return;
+    //     boost::asio::write(socket_, asio_buf);
     // };
+    void sendData(const boost::asio::const_buffer& buffer) {
+        boost::asio::write(socket_, buffer);
+    }
+
+    void setReceiver(const std::string& ip_address, unsigned short port) {
+        receiver_endpoint_.address(boost::asio::ip::address::from_string(ip_address));
+        receiver_endpoint_.port(port);
+    };
+
+    void connect() {
+        socket_.connect(receiver_endpoint_);
+    }
+
 };
