@@ -11,9 +11,6 @@ class Sender{
     ip::tcp::endpoint receiver_endpoint_;
 
  public:
-    // Sender(io_context& io_context, const std::string& ip_address, unsigned short port): 
-    // io_context_(io_context),
-    // socket_(io_context, ip::tcp::endpoint(ip::address::from_string(ip_address), port)) {}
     Sender(io_context& io_context): io_context_(io_context), socket_(io_context) {}
 
     void sendData(const boost::asio::const_buffer& buffer) {
@@ -29,7 +26,6 @@ class Sender{
         socket_.connect(receiver_endpoint_);
     }
 
-    // Метод для сканирования сети и получения списка доступных получателей
     std::vector<std::string> findReceivers(std::string network_address, int start_port, int end_port) {
         std::vector<std::string> receivers;
         ip::address base_address = ip::address::from_string(network_address);
@@ -38,14 +34,10 @@ class Sender{
             ip::tcp::endpoint endpoint(base_address, i);
             
             try {
-                // Отправляем ping-запрос
                 ip::tcp::socket socket(io_context_, ip::tcp::v4());
                 socket.connect(endpoint);
-
-                // Если подключение установлено, добавляем IP-адрес в список
                 receivers.push_back(base_address.to_string());
             } catch (const std::exception& e) {
-                // Игнорируем ошибки (например, если устройство не отвечает)
                 std::cerr << "Ошибка: " << e.what() << std::endl;
             }
         }
